@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Voice Assistant</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="assistant">
+        <div class="topbar">
+          <span id="connectionStatus" class="status">Checking</span>
+          <span id="clock">--:--</span>
+        </div>
+
+        <div id="orb" class="orb"></div>
+
+        <h1>Nyra✨</h1>
+        <h2>Personal Voice Assistant</h2>
+        <p id="assistantStatus">Ready when you are.</p>
+
+        <div class="controls">
+          <button id="listenButton" type="button">Listen</button>
+          <button id="stopButton" type="button">Stop</button>
+        </div>
+
+        <label>
+          Answer with
+          <select id="providerSelect">
+            <option value="openai">OpenAI</option>
+            <option value="huggingface">Hugging Face</option>
+          </select>
+        </label>
+
+        <form id="textForm">
+          <input id="textInput" type="text" placeholder="Ask anything or type a command" />
+          <button type="submit">Send</button>
+        </form>
+      </section>
+
+      <section class="conversation">
+        <div class="header">
+          <h2>Conversation</h2>
+          <button id="clearButton" type="button">Clear</button>
+        </div>
+
+        <div id="messages" class="messages"></div>
+
+        <div class="quick">
+          <button type="button" data-command="open youtube">YouTube</button>
+          <button type="button" data-command="time">Time</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>
